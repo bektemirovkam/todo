@@ -1,0 +1,58 @@
+.sidebar {
+  &__list {
+    li {
+      margin-bottom: 5px;
+      padding: 0px 10px;
+      line-height: 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        .remove,
+        .edit {
+          opacity: 0.3;
+        }
+      }
+      &.active {
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        border-radius: 5px;
+      }
+      i {
+        flex: 0 0 auto;
+        .remove {
+          opacity: 0;
+          transition: all 0.3s ease;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .edit {
+          width: 10px;
+          height: 10px;
+          margin-right: 10px;
+          opacity: 0;
+          transition: all 0.3s ease;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      span {
+        flex: 1 1 auto;
+        padding: 0px 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 160px;
+        white-space: nowrap;
+        padding: 10px 5px;
+      }
+    }
+  }
+  &__input {
+    height: 28px;
+    margin: 5px 5px;
+  }
+}
