@@ -44,7 +44,7 @@ const AddList = ({ colors, addNewList }) => {
     };
 
     axios
-      .post("http://localhost:3001/lists", newList)
+      .post("/lists", newList)
       .then(({ data }) => {
         addNewList(data);
         closePopup();

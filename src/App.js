@@ -14,12 +14,10 @@ function App() {
   let location = useLocation();
 
   React.useEffect(() => {
-    axios
-      .get("http://localhost:3001/lists?_expand=color&_embed=tasks")
-      .then(({ data }) => {
-        setLists(data);
-      });
-    axios.get("http://localhost:3001/colors").then(({ data }) => {
+    axios.get("/lists?_expand=color&_embed=tasks").then(({ data }) => {
+      setLists(data);
+    });
+    axios.get("/colors").then(({ data }) => {
       setColors(data);
     });
   }, []);
@@ -46,7 +44,7 @@ function App() {
     });
     setLists(newLists);
     axios
-      .patch("http://localhost:3001/lists/" + id, {
+      .patch("/lists/" + id, {
         name: newName,
       })
       .catch(() => {
@@ -60,7 +58,7 @@ function App() {
       if (activeList && activeList.id === id) {
         history.push("/");
       }
-      axios.delete("http://localhost:3001/lists/" + id).catch(() => {
+      axios.delete("/lists/" + id).catch(() => {
         alert("Не удалось удалить запись");
       });
     }
@@ -78,7 +76,7 @@ function App() {
   const deleteTask = (listId, taskId) => {
     if (window.confirm("Удалить запись?")) {
       axios
-        .delete("http://localhost:3001/tasks/" + taskId)
+        .delete("/tasks/" + taskId)
         .then(() => {
           const newLists = lists.map((list) => {
             if (list.id === listId) {
@@ -96,7 +94,7 @@ function App() {
   };
   const editTaskText = (listId, taskId, newText) => {
     axios
-      .patch("http://localhost:3001/tasks/" + taskId, {
+      .patch("/tasks/" + taskId, {
         text: newText,
       })
       .then(() => {
@@ -120,7 +118,7 @@ function App() {
   };
   const toggleСompleteTask = (listId, taskId, value) => {
     axios
-      .patch("http://localhost:3001/tasks/" + taskId, {
+      .patch("/tasks/" + taskId, {
         completed: value,
       })
       .then(() => {

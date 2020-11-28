@@ -96,7 +96,7 @@
     {
       "listId": 7,
       "text": "Улучшить доступность",
-      "completed": false,
+      "completed": true,
       "id": 20
     },
     {

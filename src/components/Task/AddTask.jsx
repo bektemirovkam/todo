@@ -20,7 +20,7 @@ const AddTask = ({ currentList, addNewTask }) => {
         completed: false,
       };
       axios
-        .post("http://localhost:3001/tasks", newTask)
+        .post("/tasks", newTask)
         .then(({ data }) => {
           addNewTask(data);
         })
