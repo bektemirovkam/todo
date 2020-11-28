@@ -110,6 +110,12 @@
       "text": "Посмотреть какой-нибудь фильм",
       "completed": true,
       "id": 22
+    },
+    {
+      "listId": 8,
+      "text": "Стас черт!",
+      "completed": false,
+      "id": 23
     }
   ],
   "colors": [
