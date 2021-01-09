@@ -2,11 +2,11 @@
 
 Используемые библиотеки:
 
-1)react
-2)json-server
-3)node-sass
-4)axios
-5)classnames
-6)hooks
+1)react <br/> 
+2)json-server <br/>
+3)node-sass <br/>
+4)axios <br/>
+5)classnames <br/>
+6)hooks <br/>
 
 Ссылка на приложение https://my-todo-react.herokuapp.com/
